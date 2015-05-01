@@ -17,7 +17,6 @@ import java.util.Date;
 import java.util.List;
 
 import com.example.service.R;
-import com.example.service.R.string;
 
 import android.app.AlarmManager;
 import android.app.PendingIntent;
