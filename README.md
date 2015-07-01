@@ -15,8 +15,8 @@ stop: stopService(new Intent(this, LogService.class));
 
 ## Communication with activity and service
 
-package£ºcom.example.service.comm
+package: com.example.service.comm
 
-activity£ºCommAct.java
+activity: CommAct.java
 
-service£ºCommService.java
+service: CommService.java
