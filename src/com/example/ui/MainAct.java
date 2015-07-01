@@ -1,17 +1,18 @@
 package com.example.ui;
 
 import com.example.service.R;
-import com.example.service.log.LogService;
+import com.example.service.comm.CommAct;
+import com.example.service.log.LogServiceAct;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.SystemClock;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.View.OnClickListener;
 
-public class MainAct extends Activity {
+public class MainAct extends Activity implements OnClickListener {
 
 	private static final String TAG = MainAct.class.getSimpleName();
 	
@@ -19,24 +20,29 @@ public class MainAct extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main_act);
+		findViewById(R.id.main_act_LogService).setOnClickListener(this);
+		findViewById(R.id.main_act_ActServiceComm).setOnClickListener(this);
+	}
+	
+	@Override
+	public void onClick(View v) {
+		switch (v.getId()) {
+		case R.id.main_act_LogService:
+			startActivity(new Intent(this, LogServiceAct.class));
+			break;
+		case R.id.main_act_ActServiceComm:
+			startActivity(new Intent(this, CommAct.class));
+			break;
+
+		default:
+			break;
+		}
 		
-		startService(new Intent(this, LogService.class));
-		
-		new Thread() {
-			public void run() {
-				for (int i = 0; i < 1000; i++) {
-					Log.w(TAG, TAG + ", i: " + i);
-					SystemClock.sleep(1000);
-				}
-			};
-		}.start();
 	}
 	
 	@Override
 	protected void onDestroy() {
-		// TODO Auto-generated method stub
 		super.onDestroy();
-		stopService(new Intent(this, LogService.class));
 	}
 
 	@Override
