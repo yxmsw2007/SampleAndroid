@@ -12,10 +12,13 @@ import java.util.ArrayList;
 import android.util.Log;
 
 /**
- * ASR webAPI 示例程序
- * 
- * @author unisound
- * @date 2015年1月27日
+ * @project SampleAndroid   
+ * @class AsrClient 
+ * @description       
+ * @author yxmsw2007
+ * @version   
+ * @email yxmsw2007@gmail.com  
+ * @data 2015-7-4 下午10:05:39    
  */
 public class AsrClient {
 	

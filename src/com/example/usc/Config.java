@@ -6,10 +6,13 @@
 package com.example.usc;
 
 /**
- * cn.yunzhisheng.prodemo.Config
- * @author  liujunjie <br/>
- * Create at 2015-1-9 ??4:30:32
- *
+ * @project SampleAndroid   
+ * @class Config 
+ * @description       
+ * @author yxmsw2007
+ * @version   
+ * @email yxmsw2007@gmail.com  
+ * @data 2015-7-4 下午10:04:55    
  */
 public class Config {
 	
