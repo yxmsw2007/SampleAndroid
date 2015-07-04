@@ -1,6 +1,6 @@
 package com.example.service.comm;
 
-import com.example.service.R;
+import com.example.app.R;
 import com.example.service.comm.CommService.LocalBinder;
 
 import android.app.Activity;

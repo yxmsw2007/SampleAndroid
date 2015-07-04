@@ -1,6 +1,6 @@
 package com.example.service.log;
 
-import com.example.service.R;
+import com.example.app.R;
 
 import android.app.Activity;
 import android.content.Intent;

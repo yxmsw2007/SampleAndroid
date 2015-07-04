@@ -1,8 +1,9 @@
 package com.example.ui;
 
-import com.example.service.R;
+import com.example.app.R;
 import com.example.service.comm.CommAct;
 import com.example.service.log.LogServiceAct;
+import com.example.usc.AsrAct;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -12,6 +13,15 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 
+/**
+ * @project SampleAndroid   
+ * @class MainAct 
+ * @description       
+ * @author yxmsw2007
+ * @version   
+ * @email yxmsw2007@gmail.com  
+ * @data 2015-7-4 下午7:34:45    
+ */
 public class MainAct extends Activity implements OnClickListener {
 
 	private static final String TAG = MainAct.class.getSimpleName();
@@ -22,6 +32,7 @@ public class MainAct extends Activity implements OnClickListener {
 		setContentView(R.layout.main_act);
 		findViewById(R.id.main_act_LogService).setOnClickListener(this);
 		findViewById(R.id.main_act_ActServiceComm).setOnClickListener(this);
+		findViewById(R.id.main_act_AsrAct).setOnClickListener(this);
 	}
 	
 	@Override
@@ -32,6 +43,9 @@ public class MainAct extends Activity implements OnClickListener {
 			break;
 		case R.id.main_act_ActServiceComm:
 			startActivity(new Intent(this, CommAct.class));
+			break;
+		case R.id.main_act_AsrAct:
+			startActivity(new Intent(this, AsrAct.class));
 			break;
 
 		default:

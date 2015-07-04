@@ -20,3 +20,11 @@ package: com.example.service.comm
 activity: CommAct.java
 
 service: CommService.java
+
+## Unisound Speech to text
+
+package: com.example.usc
+
+activity: AsrAct.java
+
+AsrClient: AsrClient.java
