@@ -12,6 +12,15 @@ import android.os.Binder;
 import android.os.IBinder;
 import android.util.Log;
 
+/**
+ * @project SampleAndroid   
+ * @class CommService 
+ * @description       
+ * @author yxmsw2007
+ * @version   
+ * @email yxmsw2007@gmail.com  
+ * @data 2015-7-5 上午10:12:47    
+ */
 public class CommService extends Service {
 
 	public static final String ACTION_FROME_ACT = "com.example.ACTION_FROME_ACT";	
