@@ -1,6 +1,7 @@
 package com.example.ui;
 
 import com.example.app.R;
+import com.example.audio.AudioAct;
 import com.example.service.comm.CommAct;
 import com.example.service.log.LogServiceAct;
 import com.example.usc.AsrAct;
@@ -33,6 +34,7 @@ public class MainAct extends Activity implements OnClickListener {
 		findViewById(R.id.main_act_LogService).setOnClickListener(this);
 		findViewById(R.id.main_act_ActServiceComm).setOnClickListener(this);
 		findViewById(R.id.main_act_AsrAct).setOnClickListener(this);
+		findViewById(R.id.main_act_AudioAct).setOnClickListener(this);
 	}
 	
 	@Override
@@ -46,6 +48,9 @@ public class MainAct extends Activity implements OnClickListener {
 			break;
 		case R.id.main_act_AsrAct:
 			startActivity(new Intent(this, AsrAct.class));
+			break;
+		case R.id.main_act_AudioAct:
+			startActivity(new Intent(this, AudioAct.class));
 			break;
 
 		default:

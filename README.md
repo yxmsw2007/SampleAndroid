@@ -34,3 +34,13 @@ activity: AsrAct.java
 AsrClient: AsrClient.java
 
 blog：[云知声语音转文字-Android](http://yxmblog.com/android/2015/07/04/unisound-speech-to-text.html)
+
+## Audio record and play
+
+package：com.example.audio
+
+activity：AudioAct.java
+
+record：AudioRec.java
+
+play：AudioPlay.java

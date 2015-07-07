@@ -31,6 +31,7 @@
         <activity android:name="com.example.service.comm.CommAct"></activity>
         <service android:name=".comm.CommService"></service>
         <activity android:name="com.example.usc.AsrAct"></activity>
+        <activity android:name="com.example.audio.AudioAct"></activity>
     </application>
 
 </manifest>
