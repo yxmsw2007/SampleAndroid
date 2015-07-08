@@ -20,6 +20,7 @@ public class AudioPlay {
 	public final static int PCM16_FRAME_SIZE = 320;
 	public final static int DELAY_FRAMES = 50 * 10;
 	
+//	public final static int STREAM_TYPE = AudioManager.STREAM_MUSIC;
 	public final static int STREAM_TYPE = AudioManager.STREAM_VOICE_CALL;
 	public final static int SAMPLE_RATE_IN_HZ = 8000;
 	public final static int CHANNEL_CONFIG = AudioFormat.CHANNEL_OUT_MONO;
@@ -86,14 +87,14 @@ public class AudioPlay {
 		mIsRunning = false;
 	}
 
-	public void playAudio(byte[] amrnb) {
+	public void playAudio(byte[] data) {
 		if (!mIsRunning)
 			return;
 		synchronized (mAudioBuffer) {
 			if (mAudioBuffer.size() > DELAY_FRAMES) {
 				mAudioBuffer.clear();
 			}
-			mAudioBuffer.add(amrnb);
+			mAudioBuffer.add(data);
 		}
 	}
 	

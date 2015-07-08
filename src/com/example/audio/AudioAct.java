@@ -6,6 +6,7 @@ import com.example.app.R;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -41,11 +42,18 @@ public class AudioAct extends Activity implements IAudioRecCallback, OnClickList
 		audio_act_record = (Button) findViewById(R.id.audio_act_record);
 		audio_act_play = (Button) findViewById(R.id.audio_act_play);
 		audio_act_info = (TextView) findViewById(R.id.audio_act_info);
+		
+		audio_act_record.setOnClickListener(this);
+		audio_act_play.setOnClickListener(this);
+		
 	}
 
 	@Override
 	public void read(byte[] data) {
-		
+		Log.d(TAG, "" + data.length);
+		if (mAudioPlay.isPlaying()) {
+			mAudioPlay.playAudio(data);
+		}
 	}
 	
 	@Override

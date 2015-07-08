@@ -4,6 +4,8 @@ import android.media.AudioFormat;
 import android.media.AudioManager;
 import android.media.AudioRecord;
 import android.media.MediaRecorder;
+import android.util.Log;
+
 import java.util.LinkedList;
 
 /**
@@ -21,7 +23,7 @@ public class AudioRec {
 	
 	private final static int PCM16_FRAME_SIZE = 320;
 
-	public final static int STREAM_TYPE = AudioManager.STREAM_MUSIC;
+	public final static int STREAM_TYPE = MediaRecorder.AudioSource.MIC;
 	public final static int SAMPLE_RATE_IN_HZ = 8000;
 	public final static int CHANNEL_CONFIG = AudioFormat.CHANNEL_IN_MONO;
 	public final static int AUDIO_FORMAT = AudioFormat.ENCODING_PCM_16BIT;
@@ -68,15 +70,18 @@ public class AudioRec {
 			audioRecord.startRecording();
 			byte[] buffer = new byte[minBufferSize];
 			while (mIsRunning) {
-				int len = audioRecord.read(buffer, 0, minBufferSize);
-				if (len == PCM16_FRAME_SIZE && !mIsMute) {
-					mCallback.read(buffer);
+				int len = audioRecord.read(buffer, 0, buffer.length);
+				if (len > 0 && !mIsMute) {
+					byte[] data = new byte[len];
+					System.arraycopy(buffer, 0, data, 0, len);
+					mCallback.read(data);
 				}
 			}
 			if (audioRecord.getState() == AudioRecord.STATE_INITIALIZED) {
 				audioRecord.stop();
 				audioRecord.release();
 			}
+			
 		}
 	};
 
