@@ -1,10 +1,13 @@
 package com.example.audio;
 
 /**
- * @author yexiaoming
- * @version 1.0 
- * email xiaoming.ye@cnlaunch.com
- * create date 2015-1-13
+ * @project SampleAndroid.workspace   
+ * @class IAudioRecCallback 
+ * @description       
+ * @author yxmsw2007
+ * @version   
+ * @email yxmsw2007@gmail.com  
+ * @data 2015-7-9 下午10:41:55    
  */
 public interface IAudioRecCallback {
 

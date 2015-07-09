@@ -44,3 +44,6 @@ activity：AudioAct.java
 record：AudioRec.java
 
 play：AudioPlay.java
+
+blog：[AudioRecord和AudioTrack使用实例-Android](http://yxmblog.com/android/2015/07/09/audio-record-and-play.html#2)
+
