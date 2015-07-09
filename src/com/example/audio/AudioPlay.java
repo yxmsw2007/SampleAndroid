@@ -31,7 +31,6 @@ public class AudioPlay {
 	private boolean mIsRunning;
 
 	public AudioPlay() {
-		super();
 		mIsRunning = false;
 	}
 
@@ -72,8 +71,9 @@ public class AudioPlay {
 	};
 
 	public void startPlay() {
-		if (mIsRunning)
+		if (mIsRunning) {
 			return;
+		}
 		mIsRunning = true;
 		synchronized (mAudioBuffer) {
 			mAudioBuffer.clear();
@@ -88,14 +88,10 @@ public class AudioPlay {
 	}
 
 	public void playAudio(byte[] data) {
-		if (!mIsRunning)
+		if (!mIsRunning) {
 			return;
-		synchronized (mAudioBuffer) {
-			if (mAudioBuffer.size() > DELAY_FRAMES) {
-				mAudioBuffer.clear();
-			}
-			mAudioBuffer.add(data);
 		}
+		mAudioBuffer.add(data);
 	}
 	
 	public boolean isPlaying() {

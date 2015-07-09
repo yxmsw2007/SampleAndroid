@@ -33,6 +33,7 @@ public class AudioAct extends Activity implements IAudioRecCallback, OnClickList
 	
 	private Button audio_act_record;
 	private Button audio_act_play;
+	private Button audio_act_read_buffer;
 	private TextView audio_act_info;
 	
 	@Override
@@ -41,19 +42,19 @@ public class AudioAct extends Activity implements IAudioRecCallback, OnClickList
 		setContentView(R.layout.audio_act);
 		audio_act_record = (Button) findViewById(R.id.audio_act_record);
 		audio_act_play = (Button) findViewById(R.id.audio_act_play);
+		audio_act_read_buffer = (Button) findViewById(R.id.audio_act_read_buffer);
 		audio_act_info = (TextView) findViewById(R.id.audio_act_info);
 		
 		audio_act_record.setOnClickListener(this);
 		audio_act_play.setOnClickListener(this);
+		audio_act_read_buffer.setOnClickListener(this);
 		
 	}
 
 	@Override
 	public void read(byte[] data) {
 		Log.d(TAG, "" + data.length);
-		if (mAudioPlay.isPlaying()) {
-			mAudioPlay.playAudio(data);
-		}
+		mAudioBuffer.add(data);
 	}
 	
 	@Override
@@ -65,7 +66,6 @@ public class AudioAct extends Activity implements IAudioRecCallback, OnClickList
 			} else {
 				mAudioRec.startRecord();
 			}
-			updateView();
 			break;
 		case R.id.audio_act_play:
 			if (mAudioPlay.isPlaying()) {
@@ -73,17 +73,29 @@ public class AudioAct extends Activity implements IAudioRecCallback, OnClickList
 			} else {
 				mAudioPlay.startPlay();
 			}
-			updateView();
+			break;
+		case R.id.audio_act_read_buffer:
+			if (!mAudioPlay.isPlaying()) {
+				mAudioPlay.startPlay();
+			}
+			readBuffer();
 			break;
 
 		default:
 			break;
 		}
+		updateView();
 	}
 	
 	private void updateView() {
 		audio_act_record.setText(mAudioRec.isRecording() ? "Record(On)" : "Record(Off)");
 		audio_act_play.setText(mAudioPlay.isPlaying() ? "Play(On)" : "Play(Off)");
+	}
+	
+	public void readBuffer() {
+		for (int i = 0; i < mAudioBuffer.size(); i++) {
+			mAudioPlay.playAudio(mAudioBuffer.remove(0));
+		}
 	}
 	
 }

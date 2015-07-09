@@ -19,6 +19,11 @@
         android:layout_height="wrap_content"
         android:text="Play(Off)" />
     
+    <Button android:id="@+id/audio_act_read_buffer"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Read buffer" />
+    
     <TextView android:id="@+id/audio_act_info"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content" />

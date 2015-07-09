@@ -34,7 +34,6 @@ public class AudioRec {
 	private IAudioRecCallback mCallback;
 	
 	public AudioRec(IAudioRecCallback callback) {
-		this();
 		this.mCallback = callback;
 	}
 	
