@@ -8,24 +8,40 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical" >
         
-    <Button android:id="@+id/main_act_LogService"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="LogService" />
+    <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10px"
+            android:background="@drawable/shape_black"
+            android:orientation="vertical"
+            android:padding="1px" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_white"
+                android:orientation="vertical" >
     
-    <Button android:id="@+id/main_act_ActServiceComm"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="CommAct" />
-    
-    <Button android:id="@+id/main_act_AsrAct"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="AsrAct" />
-    
-    <Button android:id="@+id/main_act_AudioAct"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="AudioAct" />
+			    <Button android:id="@+id/main_act_LogService"
+			        android:layout_width="fill_parent"
+			        android:layout_height="wrap_content"
+			        android:text="LogService" />
+			    
+			    <Button android:id="@+id/main_act_ActServiceComm"
+			        android:layout_width="fill_parent"
+			        android:layout_height="wrap_content"
+			        android:text="CommAct" />
+			    
+			    <Button android:id="@+id/main_act_AsrAct"
+			        android:layout_width="fill_parent"
+			        android:layout_height="wrap_content"
+			        android:text="AsrAct" />
+			    
+			    <Button android:id="@+id/main_act_AudioAct"
+			        android:layout_width="fill_parent"
+			        android:layout_height="wrap_content"
+			        android:text="AudioAct" />
+            </LinearLayout>
+        </LinearLayout>
 
 </LinearLayout>

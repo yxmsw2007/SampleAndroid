@@ -3,40 +3,60 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:orientation="vertical" >
+    android:paddingTop="@dimen/activity_vertical_margin" >
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Transfer type" />
-    
-    <LinearLayout android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        
-	    <CheckBox android:id="@+id/comm_act_broadcast"
-	        android:layout_width="fill_parent"
-	        android:layout_height="wrap_content"
-	        android:layout_weight="1"
-	        android:text="BroadcastReceiver" />
-        
+        android:layout_margin="10px"
+        android:background="@drawable/shape_black"
+        android:orientation="vertical"
+        android:padding="1px" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_white"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Transfer type" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <CheckBox
+                    android:id="@+id/comm_act_broadcast"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="BroadcastReceiver" />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/comm_act_input"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/comm_act_send"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Send message" />
+
+            <TextView
+                android:id="@+id/comm_act_show_info"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
     </LinearLayout>
-    
-    <EditText android:id="@+id/comm_act_input"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"/>
-    
-    <Button android:id="@+id/comm_act_send"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="Send message" />
 
-    <TextView android:id="@+id/comm_act_show_info"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"/>
-    
 </LinearLayout>

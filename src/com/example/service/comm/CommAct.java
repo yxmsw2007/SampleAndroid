@@ -68,7 +68,9 @@ public class CommAct extends Activity implements ServiceConnection, INotifiable,
 		// TODO Auto-generated method stub
 		super.onDestroy();
 		unbindService(this);
-		unregisterReceiver(mReceiver);
+		if (comm_act_broadcast.isChecked()) {
+			unregisterReceiver(mReceiver);
+		}
 	}
 	
 	@Override
